@@ -6,17 +6,17 @@
 
 ## Option 1: run on OS X11 server
 
-        ./run.bash
+    ./run.bash
 
 ## Option 2: run on VNC Xserver
 
-    Download VNC xserver
+Download VNC xserver
 
-        docker pull devrt/xserver
+    docker pull devrt/xserver
 
-    Run with VNC xserver
+Run with VNC xserver
 
-        ./run_xserver.bash
+    ./run_xserver.bash
 
 
 # Run test programs
@@ -24,16 +24,19 @@
 
 ## For VNC Xserver
 
-    Open a browser at
+Open a browser at
 
-        http://localhost:3000/
+    http://localhost:3000/
 
 ## Test programs
 
-    In the container:
+In the container:
 
-        xclock &
+    xclock &
 
-        glxgears &
+    glxgears &
+
+
+You should see the apps running in your OS system (Option 1) or in the browser (Option 2).
 
 
