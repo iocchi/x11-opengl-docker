@@ -1,0 +1,38 @@
+version: "2.3"
+services:
+
+  xserver:
+    image: devrt/xserver
+    container_name: xserver
+    ipc: host
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - DISPLAY=:1
+    ports:
+      - "3000:80"
+    healthcheck:
+      test: ["CMD-SHELL", "test -e /tmp/.X11-unix/X0"]
+      interval: "1s"
+      retries: 20
+
+  simulator:
+    image: x11_opengl
+    container_name: xclient
+    tty: true
+    ipc: host
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - DISPLAY=:1
+    volumes_from:
+      - xserver
+    depends_on:
+      - xserver
+    entrypoint:
+    - bash
+    - -ci 
+    - "sleep 10 && xclock & glxgears"
+
+
+

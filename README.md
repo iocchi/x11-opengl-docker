@@ -1,3 +1,9 @@
+# Install
+
+Install docker and docker-compose.
+
+Tested with docker `19.03.6` and docker-compose `1.28.2`
+
 # Build the image
 
     ./build.bash
@@ -8,6 +14,7 @@
 
     ./run.bash
 
+
 ## Option 2: run on VNC Xserver
 
 Download VNC xserver
@@ -17,6 +24,10 @@ Download VNC xserver
 Run with VNC xserver
 
     ./run_xserver.bash
+
+or
+
+    docker-compose up
 
 
 # Run test programs
@@ -30,7 +41,7 @@ Open a browser at
 
 ## Test programs
 
-In the container:
+In the container (not needed if started with docker-compose9
 
     xclock &
 
@@ -39,4 +50,12 @@ In the container:
 
 You should see the apps running in your OS system (Option 1) or in the browser (Option 2).
 
+# Close the containers
 
+In the terminal where `run.bash` or `docker-compose up` has launched
+
+    CTRL-c
+
+or (if started with `docker-compose`)
+
+    docker-compose down
