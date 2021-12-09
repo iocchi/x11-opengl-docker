@@ -1,3 +1,11 @@
+# X11 & OpenGL docker test
+
+This repository contains a minimal configuration of X11 & OpenGL tests
+on docker.
+
+TODO: add scripts for NVidia drivers
+
+
 # Install
 
 Install docker and docker-compose.
@@ -41,7 +49,7 @@ Open a browser at
 
 ## Test programs
 
-In the container (not needed if started with docker-compose9
+In the container (not needed if started with docker-compose)
 
     xclock &
 
